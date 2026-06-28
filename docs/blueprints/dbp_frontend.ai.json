@@ -1,0 +1,13 @@
+{
+  "stack": "frontend",
+  "route_map": {},
+  "total_routes": 0,
+  "store_count": 0,
+  "store_dependencies": {},
+  "component_count": 0,
+  "icon_component_count": 0,
+  "known_bugs": [
+    "| \u2014 | \u2014 | \u2014 |"
+  ],
+  "scan_timestamp": "2026-06-28T12:28:23.007380 | in sovereign time"
+}

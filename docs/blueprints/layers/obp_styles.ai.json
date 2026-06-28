@@ -1,0 +1,15 @@
+{
+  "layer": "styles",
+  "files": {},
+  "total_classes_defined": 0,
+  "classes_used_in_code": 0,
+  "unused_classes_count": 0,
+  "unused_class_names": [],
+  "known_issues": {
+    "typography.css": "Invalid font-size values (Tailwind class strings used in CSS properties) \u2014 not imported in app.css, no runtime impact",
+    "domains.css": "Broken box-shadow syntax \u2014 not imported in app.css, no runtime impact",
+    "zoom.css": "Targets 30+ Sanctuary environments irrelevant to desktop player \u2014 not imported in app.css, no runtime impact"
+  },
+  "not_imported_files": [],
+  "scan_timestamp": "2026-06-28T12:28:23.004933 | in sovereign time"
+}
