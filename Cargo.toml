@@ -1,0 +1,11 @@
+[package]
+name = "resonance-knowledge"
+version = "0.1.0"
+description = "The Resonance Grammar — atoms, molecules, categories, and sensory lexicon"
+authors = ["Quantum Weaver"]
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.31", features = ["bundled"] }
