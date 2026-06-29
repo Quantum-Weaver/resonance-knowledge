@@ -1,78 +1,61 @@
-# RESONANCE ECHOES — MASTER CHECKLIST
-
-*Single source of truth for build state.*
+# RESONANCE KNOWLEDGE — MASTER CHECKLIST
 
 ## LEGEND
 - ✅ Complete
 - ⚠️ In Progress
 - 🔴 Broken
 - ⬜ Pending
-- 🔵 Ready for Test
 
 ---
 
 ## PHASE STATUS
 
-### Phase 0: Shell ⬜
-- [ ] App layout with ComfortBar footer
-- [ ] Collapsible sidebar (20vw, hamburger below status bar)
-- [ ] COSMIC theme system
-- [ ] Mobile-safe areas
+### Phase K-0: Schema & Seed ✅
+- [x] atoms table
+- [x] molecules table
+- [x] categories table
+- [x] senses table (8 senses)
+- [x] subcategories table (19 subcategories)
+- [x] emoji_definitions table (12 emojis)
+- [x] Seed data inserts clean
+- [x] cargo build — zero errors
+- [x] **Tested:** ✅
+
+### Phase K-1: Query CLI ✅
+- [x] atom query by term
+- [x] emoji query by character
+- [x] sense query with subcategories
+- [x] list-atoms, list-emojis, list-senses
+- [x] All output is valid JSON
+- [x] Error handling for not-found
+- [x] cargo build — zero errors
+- [x] **Tested:** ✅
+
+### Phase K-2: MCP Server ⬜
+- [ ] rmcp server scaffold
+- [ ] query_atom tool
+- [ ] query_emoji tool
+- [ ] query_sense tool
+- [ ] HTTP transport
+- [ ] Claude Code configuration
 - [ ] **Tested:** ⬜
 
-### Phase 1: The Echo ⬜
-- [ ] Echo form (name, sense, subcategory, emoji, note, intensity, timestamp)
-- [ ] echoStore with reactive state
-- [ ] Rust add_echo, get_echoes commands
-- [ ] Home timeline with EchoCard
+### Phase K-3: Echoes Integration ⬜
+- [ ] Echoes imports senses from Knowledge
+- [ ] Echoes imports emoji definitions from Knowledge
+- [ ] Single source of truth verified
 - [ ] **Tested:** ⬜
 
-### Phase 2: Browse & Filter ⬜
-- [ ] Debounced search
-- [ ] Filter by sense
-- [ ] Filter by emoji
-- [ ] Sort options
-- [ ] Load more
-- [ ] **Tested:** ⬜
-
-### Phase 3: Gentle Insights ⬜
-- [ ] Top Emojis
-- [ ] By Sense distribution
-- [ ] Streak count
-- [ ] Time of Day observation
-- [ ] Recent Mood row
-- [ ] **Tested:** ⬜
-
-### Phase 4: Onboarding ⬜
-- [ ] Welcome screen
-- [ ] Vessel name input
-- [ ] Theme selection
-- [ ] **Tested:** ⬜
-
-### Phase 5: Data Sovereignty ⬜
-- [ ] Export JSON
-- [ ] Purge with double confirm
-- [ ] Export & Purge
-- [ ] Settings page
-- [ ] **Tested:** ⬜
-
-### Phase 6: Mobile Ship ⬜
-- [ ] Android testing
-- [ ] Sign APK
-- [ ] App icons
-- [ ] Store prep
+### Phase K-4: Compass Integration ⬜
+- [ ] Compass v2 imports mood emojis from Knowledge
+- [ ] Validation against shared vocabulary
 - [ ] **Tested:** ⬜
 
 ---
-
-## KNOWN BUGS
-
-| ID | Description | Status |
-|----|-------------|--------|
-| — | — | — |
 
 ## SESSION LOG
 
 | Date | What Was Done |
 |------|---------------|
-| 2026-06-28 | Repo created. Foundation files. Config refined. Scaffold builds clean. |
+| 2026-06-28 | Repo created. Schema + seed data. K-0 complete. |
+| 2026-06-28 | Query CLI. atom/emoji/sense/list commands. K-1 complete. |
