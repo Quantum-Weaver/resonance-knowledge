@@ -1,74 +1,50 @@
 # BUILD SEQUENCE — Resonance Knowledge
 
-Each phase on its own branch from main. Human test before merge. Zero errors on `npm run check` and `cargo build`.
+Each phase on its own branch from main. Zero errors on `cargo build`.
 
 ---
 
-## Phase 0: Shell
-**Branch:** `resonance-knowledge/shell`
+## Phase K-0: Schema & Seed
+**Branch:** `resonance-knowledge/schema`
 
-- App layout with ComfortBar (greeting + quick-add button, expandable)
-- Collapsible sidebar (proven pattern from Compass: 20vw, hamburger button below status bar)
-- COSMIC theme system (dark/light/amoled, 6 presets)
-- Mobile-safe areas (safe-area-inset-top, safe-area-inset-bottom)
-- Window identifier: `com.audhd.resonance-knowledge`
-- **Test:** App opens on Android. Sidebar works. ComfortBar visible. Theme applies. No crashes.
+- SQLite schema: atoms, molecules, categories, senses, subcategories, emoji_definitions
+- Seed data: 8 senses, 19 subcategories, 12 emoji definitions with sensory lexicon
+- Cargo.toml with rusqlite, serde, serde_json
+- **Test:** Database creates. Seed data inserts. `cargo build` clean.
+- **Status:** ✅ Complete
 
-## Phase 1: The Knowledge
-**Branch:** `resonance-knowledge/knowledge`
+## Phase K-1: Query CLI
+**Branch:** `resonance-knowledge/cli`
 
-- New knowledge form: name, sense (8 options), subcategory (per sense + custom), emoji (EmojiGrid), optional note, intensity (1-5), timestamp
-- SQLite knowledge table (already migrated)
-- Rust command: `add_knowledge`, `get_knowledge` (paginated, 200 at a time)
-- knowledgeStore with reactive state
-- Home screen: timeline of recent knowledge, newest first
-- KnowledgeCard component: emoji, name, sense badge, subcategory, relative timestamp, intensity dots
-- **Test:** Create knowledge. Appears in timeline. Survives restart.
+- `resonance-knowledge atom <term>` — query by term
+- `resonance-knowledge emoji <char>` — query by emoji
+- `resonance-knowledge sense <id>` — query sense with subcategories
+- `resonance-knowledge list-atoms` — all atoms
+- `resonance-knowledge list-emojis` — all emojis
+- `resonance-knowledge list-senses` — all senses
+- All output is valid JSON
+- **Test:** Each command returns correct data. `cargo build` clean.
+- **Status:** ⬜ Ready to build
 
-## Phase 2: Browse & Filter
-**Branch:** `resonance-knowledge/browse`
+## Phase K-2: MCP Server
+**Branch:** `resonance-knowledge/mcp`
 
-- Search bar with 150ms debounce
-- Filter by sense (tap sense badge)
-- Filter by emoji (tap emoji to filter)
-- Sort: newest first (default), oldest first, by sense, by intensity
-- Display cap 200 + "Load more"
-- **Test:** Filter by sense. Search works. Load more works.
+- rmcp server with HTTP transport
+- Tools: query_atom, query_emoji, query_sense
+- Claude Code integration
+- **Test:** Claude queries the Grammar. `cargo build` clean.
 
-## Phase 3: Gentle Insights
-**Branch:** `resonance-knowledge/insights`
+## Phase K-3: Echoes Integration
+**Branch:** `resonance-knowledge/echoes`
 
-- Top Emojis — most-used, sized by frequency
-- By Sense — simple distribution
-- Streak — consecutive days with at least one knowledge
-- Time of Day — "You often log in the evening"
-- Recent Mood — last 7 days as emoji row
-- No charts. No complex graphs. Just gentle patterns.
-- **Test:** Create varied Knowledge. Insights populate.
+- Echoes reads senses from Knowledge system instead of hardcoded data
+- Echoes reads emoji definitions from Knowledge system
+- Single source of truth for all apps
+- **Test:** Echoes builds with Knowledge as dependency.
 
-## Phase 4: Onboarding
-**Branch:** `resonance-knowledge/onboarding`
+## Phase K-4: Compass Integration
+**Branch:** `resonance-knowledge/compass`
 
-- First-launch welcome with 🧭 sigil
-- "What should we call you?" — vessel name input
-- Brief explanation of Knowledge
-- Theme selection (Dark/Warm/Ocean)
-- **Test:** Fresh install → onboarding → home with greeting.
-
-## Phase 5: Data Sovereignty
-**Branch:** `resonance-knowledge/sovereignty`
-
-- Export all knowledge as JSON (Tauri dialog for save location)
-- Purge all data (double confirmation)
-- Export & Purge
-- Settings page with theme, app info
-- **Test:** Export produces valid JSON. Purge clears everything.
-
-## Phase 6: Mobile Ship
-**Branch:** `resonance-knowledge/ship`
-
-- Final Android testing
-- Sign APK
-- App icons (sacred geometry sigil)
-- Store listing prep
-- **Test:** Full walkthrough on Android device.
+- Compass v2 reads mood emojis from Knowledge system
+- Validation against shared vocabulary
+- **Test:** Compass builds with Knowledge as dependency.

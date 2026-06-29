@@ -1,1 +1,1 @@
-C:\_superposition\resonance-knowledge\target\debug\resonance-knowledge.exe: C:\_superposition\resonance-knowledge\src\main.rs
+C:\_superposition\resonance-knowledge\target\debug\resonance-knowledge.exe: C:\_superposition\resonance-knowledge\src\db.rs C:\_superposition\resonance-knowledge\src\main.rs C:\_superposition\resonance-knowledge\src\query.rs C:\_superposition\resonance-knowledge\src\schema\001_initial.sql C:\_superposition\resonance-knowledge\src\seed\seed.sql

@@ -20,9 +20,11 @@ The shared vocabulary of the AudHDities Sanctuary. Every app, every vessel, ever
 - The MCP server exposes query tools for AI assistants
 - Vessels download their knowledge graph from their Sanctuary
 
-## License
+## LICENSE
 
-The Resonance License — no exploitation, no extraction, no exclusion.
+Code: [MIT](LICENSE) — use it, modify it, share it.
+
+Philosophy: [The Resonance License](PHILOSOPHY.md) — no exploitation, no extraction, no exclusion. This is our promise
 
 ---
 

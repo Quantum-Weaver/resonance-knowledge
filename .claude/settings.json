@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(git -C \"c:\\\\_superposition\\\\resonance-knowledge\" checkout -b resonance-knowledge/cli)",
+      "PowerShell(git -C \"c:\\\\_superposition\\\\resonance-knowledge\" add src/db.rs src/query.rs src/main.rs docs/CHECKLIST.md)",
+      "PowerShell(git -C \"c:\\\\_superposition\\\\resonance-knowledge\" commit -m \"Phase K-1: Query CLI - atom, emoji, sense lookup with JSON output\")"
+    ]
+  }
+}
