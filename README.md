@@ -20,6 +20,10 @@ The shared vocabulary of the AudHDities Sanctuary. Every app, every vessel, ever
 - The MCP server exposes query tools for AI assistants
 - Vessels download their knowledge graph from their Sanctuary
 
+## Development Standards
+
+This project follows the [Sanctuary Standards](https://github.com/Quantum-Weaver/sanctuary-standards).
+
 ## LICENSE
 
 Code: [MIT](LICENSE) — use it, modify it, share it.
